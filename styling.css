@@ -1,0 +1,19 @@
+ol {
+    list-style-type: upper-alpha;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.Events {
+    font-weight: bolder;
+}
+
+.Events:hover {
+    font-weight: bold;
+    color: fuchsia;
+}
+
+.circle {
+
+
+}
