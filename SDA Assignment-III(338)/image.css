@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.icon-button {
+    background-color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+}
+.icon-button i {
+    font-size: 20px;
+    color: gray;
+}
+
+.body-container {
+    font-family: Arial, segoe UI;
+    margin: 5px;
+    padding: 0;
+    color: #333;
+}
+header {
+    text-align: center;
+    padding: 60px 0px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.intro {
+    margin-bottom: 50px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+.features-items {
+    width: 200px;
+}
+.features-items img {
+    width: 50px;
+}
+
+.Products-section {
+    margin: 50px 0;
+}
+.products {
+    display: flex;
+    justify-content: space-between;
+}
+.products img {
+    width: 280px;
+    height: auto;
+}
+
+.about {
+    text-align: left;
+    padding: 60px 50px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.grid div {
+    font-size: 1em;
+}
+.grid div a {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid grey;
+}
+
+.Goal {
+    background-color: rgb(177, 174, 174);
+    width: auto;
+    height: 400px;
+}
+.text-content{
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    padding-bottom: 100px;
+    float: right;
+}
+.text-content h2{
+    margin-bottom: 10px;
+}
+.text-content p{
+    margin-bottom: 10px;
+}
+.image {
+    position: relative;
+    float: inline-start;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+.image img.background {
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 15%;
+    
+}
+.image img.overlay {
+    position: absolute;
+    top: 185px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 15%;
+}
+
+.with-passion {
+    margin-top: 50px;
+}
+
+.products-section {
+    text-align: center;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: rgb(177, 174, 174);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 60px;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    border-radius: 100%;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: black;
+}
+
+.testimonials {
+    text-align: center;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: rgb(177, 174, 174);
+}
+.customers {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+.customers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.customers img{
+    width: 50px;
+    color: rgb(177, 174, 174);
+}
+.customers h3{
+    margin: 10px 0;
+}
+.customers p{
+    color: black;
+}
+
+.content {
+    text-align: center;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: rgb(177, 174, 174) white;
+}
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.section img{
+    width: 300px;
+    height: 250px;
+    border-radius: 15px 15px 0 0 ;
+    color: rgb(177, 174, 174);
+}
+.section h3{
+    margin: 10px 0;
+}
+.section p{
+    color: black;
+    margin-top: 5px;
+}
+
+.newsletter {
+    text-align: center;
+    margin: 20px 0;
+    float: left;
+}
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+}
+.newsletter input[type="submit"] {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.hours-location {
+    text-align: center;
+    margin: 50px;
+    float: right;
+}
+
+.end {
+    background-color: black;
+    text-align: center;
+    text-color: white;
+    margin: 40px 0;
+}
+.Headline {
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+.Headline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.Headline h1{
+    margin: 20px 0;
+}
+.Headline p{
+    margin: 5px 0;
+}
