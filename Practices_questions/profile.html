@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+</head>
+<body>
+
+<!-- Using the custom element with name and role attributes -->
+<user-profile name="Dehen Yangzom" role="Software Engineering Student"></user-profile>
+
+<script>
+  // Define the UserProfile class extending HTMLElement
+  class UserProfile extends HTMLElement {
+    constructor() {
+      super();
+
+      // Attach a shadow DOM to the element
+      this.attachShadow({ mode: "open" });
+
+      // Create a template element to hold the HTML structure and styling
+      const template = document.createElement("template");
+      template.innerHTML = `
+        <style>
+          /* Styling for the card-like appearance */
+          .profile-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 250px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          .profile-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+          }
+          .profile-role {
+            font-size: 1em;
+            color: #666;
+          }
+        </style>
+        <div class="profile-card">
+          <div class="profile-name"></div>
+          <div class="profile-role"></div>
+        </div>
+      `;
+
+      // Clone the template content and append it to the shadow DOM
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
+    }
+
+    // Method to update displayed data based on attribute values
+    updateProfile() {
+      this.shadowRoot.querySelector(".profile-name").textContent = this.getAttribute("name");
+      this.shadowRoot.querySelector(".profile-role").textContent = this.getAttribute("role");
+    }
+
+    // Called when the element is added to the DOM
+    connectedCallback() {
+      this.updateProfile(); // Set initial values
+    }
+
+    // Called when observed attributes change
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (oldValue !== newValue) {
+        this.updateProfile(); // Update values if attributes change
+      }
+    }
+
+    // List attributes to observe for changes
+    static get observedAttributes() {
+      return ["name", "role"];
+    }
+  }
+
+  // Define the custom element
+  customElements.define("user-profile", UserProfile);
+</script>
+
+</body>
+</html>

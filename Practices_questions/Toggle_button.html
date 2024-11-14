@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button</title>
+  <style>
+    /* Basic button styling */
+    button {
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<toggle-button></toggle-button>
+
+<script>
+  // Define the ToggleButton class extending HTMLElement
+  class ToggleButton extends HTMLElement {
+    constructor() {
+      super();
+
+      // Load initial state from localStorage or default to OFF (false)
+      this.state = localStorage.getItem("toggleState") === "true";
+
+      // Create a button element
+      this.button = document.createElement("button");
+
+      // Set up an event listener for the button click
+      this.button.addEventListener("click", () => this.toggleState());
+
+      // Update the button's appearance based on the initial state
+      this.updateButton();
+
+      // Append the button to the custom element
+      this.appendChild(this.button);
+    }
+
+    // Toggle state method, switches between ON and OFF
+    toggleState() {
+      // Toggle the state value
+      this.state = !this.state;
+
+      // Save the updated state in localStorage
+      localStorage.setItem("toggleState", this.state);
+
+      // Dispatch a custom event called "toggle-changed"
+      this.dispatchEvent(new CustomEvent("toggle-changed", {
+        detail: { state: this.state }
+      }));
+
+      // Update the button's appearance based on the new state
+      this.updateButton();
+    }
+
+    // Update button method, adjusts text and color based on state
+    updateButton() {
+      this.button.textContent = this.state ? "ON" : "OFF";
+      this.button.style.backgroundColor = this.state ? "green" : "red";
+    }
+  }
+
+  // Define the custom element, associating it with the ToggleButton class
+  customElements.define("toggle-button", ToggleButton);
+
+  // Example of listening for the custom "toggle-changed" event
+  document.querySelector("toggle-button").addEventListener("toggle-changed", (event) => {
+    console.log("Toggle state changed:", event.detail.state);
+  });
+</script>
+
+</body>
+</html>
